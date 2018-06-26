@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 放置火狐界面出现中文乱码问题 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>围住浮动元素的三种方法</title>
+    <style type="text/css">
+       /* 方法一：为父元素添加overflow:hidden;
+       section {border:1px solid blue; margin:0 0 10px 0;overflow: hidden;}
+        p {margin 0;}
+        img{float: left;width: 120px;height: 120px;}
+        footer {border:1px solid red;}*/
+        /*方法二：同时浮动父元素*/
+        section {border:1px solid blue; float:left; width:100%;}
+        img {float:left;width:120px;height: 120px;}
+        footer {border:1px solid red; clear:left;}
+
+    </style>
+</head>
+<body>
+    <section>
+        <img src="images/2.jpg">
+        <p>It's fun to float.</p>
+    </section>
+    <footer> Here is the footer element that runs across the bottom of the
+    page.</footer>
+</body>
+</html>
