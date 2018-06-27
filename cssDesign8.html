@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>经典的排版练习</title>
+    <!-- 标题1使用google web fonts网站的pinyon手写体 -->
+    <link href='http://fonts.googleapis.com/css?family=Pinyon+Script'rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    /*使用的主字体是FontSquirrel 提供的字体Crimson Roman*/
+      @font-face {
+      font-family:'CrimsonRoman';
+      src: url('fonts/Crimson-fontfacekit/Crimson-Roman-webfont.eot');
+      src: url('fonts/Crimson-fontfacekit/Crimson-Roman-webfont.eot?#iefix') format('embedded-opentype'),
+      url('fonts/Crimson-fontfacekit/Crimson-Roman-webfont.woff') format('woff'),
+      url('fonts/Crimson-fontfacekit/Crimson-Roman-webfont.ttf') format('truetype'),
+      url('fonts/Crimson-fontfacekit/Crimson-Roman-webfont.svg#CrimsonRoman') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      }
+      * {margin:0; padding:0;}
+      body {
+      font-family:"CrimsonRoman", georgia, times, serif;
+      background-color:#fff;
+      /*基于父元素的宽度的10%的外边距。*/
+      margin:29px 10% 0;
+      background-image:url(images/grid_24px.png);
+      }
+
+      h1{
+        font-size:60px;
+        line-height:96px;
+        font-family:"Pinyon Script", cursive;
+        margin:4px 0 -4px;
+        text-align:center;
+        font-weight:normal;
+        position:relative;
+      }
+      h2{
+        font-size:18px;
+        line-height:24px;
+        font-weight:bold;
+        text-align:center;
+        /*转换为小型大写字母*/
+        font-variant:small-caps;
+        word-spacing:.5em;
+        letter-spacing:.6em;
+      }
+      p {font-size:18px; line-height:24px;}
+      /*缩进blockquote*/
+      blockquote {margin:0px 20%;}
+      q {font-size:18px; font-style:italic; line-height:24px;}
+      /*首字母下沉*/
+      h1 + p::first-letter {
+      font-family:times, serif;
+      font-size: 90px;
+      float:left;
+      line-height: .65;
+      padding:.085em 3px 0 0;
+      }
+        /*把段落第一行的文本变成小型大写字母*/
+      h1 + p::first-line {
+      font-variant:small-caps;
+      letter-spacing:.15em;
+      }
+      /*只缩进跟在段落后面的段落*/
+      p + p {text-indent:14px;}
+      /*引用内容前面的引号*/
+      q::before {content:"\201C"}
+      /*引用内容后面的引号*/
+      q::after {content:"\201D"}
+    </style>
+</head>
+<body>
+    <h2>an excerpt from</h2>
+    <h1>The Hound of the Baskervilles</h1>
+        <p>Holmes stretched out his hand for the manuscript and flattened it upon his knee. &ldquo;You will observe, Watson, the alternative use of the long s and the short. It is one of several indications which enabled me to fix the date.&rdquo; At the head was written: &ldquo;Baskerville Hall,&rdquo; and below in large, scrawling figures: &ldquo;1742.&rdquo;</p>
+        <p>&ldquo;It appears to be a statement of some sort.&rdquo;</p>
+        <p>&ldquo;Yes&mdash;it is a statement of a certain legend which runs in the Baskerville family.&rdquo;</p>
+        <blockquote>
+        <q>Of the origin of the Hound of the Baskervilles there have been many statements, yet as I come in a direct line from Hugo Baskerville, and as I had the story from my father&hellip;</q>
+        </blockquote>
+        <p>When Dr. Mortimer had finished reading this singular narrative he pushed his spectacles up on his forehead and stared across at Mr. SherlockHolmes.</p>
+</body>
+</html>
