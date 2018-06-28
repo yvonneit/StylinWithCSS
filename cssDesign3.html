@@ -11,14 +11,22 @@
         img{float: left;width: 120px;height: 120px;}
         footer {border:1px solid red;}*/
         /*方法二：同时浮动父元素*/
-        section {border:1px solid blue; float:left; width:100%;}
+        /*方法三：添加非浮动的清除元素*/
+        section {border:1px solid blue; margin:0 0 10px 0;}
+        .clearfix:after {
+        content:".";
+        display:block;
+        height:0;
+        visibility:hidden;
+        clear:both;
+        }
         img {float:left;width:120px;height: 120px;}
         footer {border:1px solid red; clear:left;}
 
     </style>
 </head>
 <body>
-    <section>
+    <section class="clearfix">
         <img src="images/2.jpg">
         <p>It's fun to float.</p>
     </section>
