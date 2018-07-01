@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <title>用负外边距实现中栏流动布局</title>
     <style type="text/css">
+        /*注意先对body、wrapper定义默认样式*/
         * {margin:0; padding:0;}
         body {font:1em helvetica, arial, sans-serif;}
         div#main_wrapper{
+        /*不知道浏览器宽度时，可以如下定义宽度*/
         min-width:600px; max-width:1100px;
         /*超过最大宽度时，居中布局*/
         margin:0 auto;
