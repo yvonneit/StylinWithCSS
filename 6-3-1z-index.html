@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>弹出层之堆叠上下文和z-index</title>
+    <style type="text/css">
+        figure {
+        width:144px; /*图片盒子宽度*/
+        height:153px; /*图片盒子高度*/
+        margin:20px 20px; /*图片盒子间距*/
+        border:1px solid #666; /*图片边框*/
+        position:relative; /*为弹出层提供定位上下文*/
+        float:left; /*让图片并排显示*/
+        }
+        img {display:block; width: 140px; height: 150px;} /*去掉图片下方的基线空白*/
+        figcaption {
+        display:none; /*隐藏弹出层*/
+        position:absolute; /*相对于容器（图片）定位*/
+        left:74%; top:14px; /*把弹出层放到图片右侧*/
+        width:130px; /*弹出层宽度*/
+        padding:10px; /*弹出层内边距*/
+        background:#f2eaea;
+        border:3px solid red;
+        border-radius:6px;
+        }
+        /*鼠标悬停在图片上时显示弹出层,并且控制元素在堆叠上下文中的次序*/
+        figure:hover figcaption {display:block; z-index:2; }
+        figcaption h3 { /*弹出层的内容*/
+        font-size:14px;
+        color:#666;
+        margin-bottom:6px;
+        }
+        figcaption a { /*弹出层的内容*/
+        display:block;
+        text-decoration:none;
+        font-size:12px;
+        color:#000;
+        }
+        figcaption::after { /*红色三角形的盒子*/
+        content:""; /*需要有内容，这里是一个空字符串*/
+        position:absolute; /*相对于弹出层定位*/
+        border:12px solid;
+        border-color:transparent red transparent transparent;
+        right:100%; top:17px; /*相对于盒子边框定位三角形*/
+        height:0px; width:0px; /*收缩边框创造三角形*/
+        }
+    </style>
+</head>
+<body>
+    <figure>
+        <img src="images/1.jpg" alt="pink heels" />
+        <figcaption>
+            <h3>Beautiful Wall no.1</h3>
+            <a href="#">More info</a>
+        </figcaption>
+    </figure>
+    <figure class="click_me">
+        <img src="images/2.jpg" alt="leopard heels" />
+        <figcaption>
+            <h3>Beautiful Wall no.2</h3>
+            <a href="#">More info</a>
+        </figcaption>
+    </figure>
+    <figure class="click_me">
+        <img src="images/3.jpg" alt="red heels" />
+        <figcaption>
+            <h3>Beautiful Wall no.3</h3>
+            <a href="#">More info</a>
+        </figcaption>
+    </figure>
+</body>
+</html>

@@ -24,21 +24,23 @@
         width:70px;
         padding:2px 0 3px 5px;
         outline:none; /*去掉默认的突显轮廓线*/
-        font-size:.8em; border-color:#eee #ccc #ccc #eee;
-        /*针对其他浏览器的厂商前缀*/
-        border-radius:10px; -webkit-transition:2s width;
+        font-size:.8em;
+        border-color:#eee #ccc #ccc #eee;
+        border-radius:10px;
+        /*针对其他浏览器的厂商前缀，字段用2秒时间平滑地伸展到200像素*/
+        -webkit-transition:2s width;
         }
+        /*表单元素获得焦点时的:focus伪类触发，将字段宽度修改成200像素*/
         form.stylin_form_search1 input:focus {width:200px;}
         form.stylin_form_search1 label {display:none;} /*标注是必要的，但不用显示出来*/
     </style>
 </head>
 <body>
     <header>
-    <form class="stylin_form_search1" action="#" method="post">
-    <label for="search">search</label>
-    <input type="search" id="search" name="search"
-    placeholder="search" />
-    </form>
+        <form class="stylin_form_search1" action="#" method="post">
+            <label for="search">search</label>
+            <input type="search" id="search" name="search" placeholder="search" />
+        </form>
     </header>
 </body>
 </html>
